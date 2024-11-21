@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.147.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
+        "mindar-image-three":"https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-three.prod.js"
+      }
+    }
+    </script>
+    <script src="./main.js" type="module"></script>
+    <style>
+      html, body {position: relative; margin: 0; width: 100%; height: 100%; overflow: hidden;}
+      .splash-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(243, 243, 243);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+      }
+      .splash-screen img {
+        max-width: 80%;
+        max-height: 80%;
+      }
+      .register-button {
+        position: absolute;
+        bottom: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 20px 60px;
+        font-size: 18px;
+        color: white;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: none;
+        z-index: 10;
+      }
+      .register-page {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        display: none;
+      }
+      .register-page input {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .register-page button {
+        padding: 10px 20px;
+        font-size: 18px;
+        color: white;
+        background-color: #28A745;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="splash-screen">
+      <img src="./Assets/Logo.png" alt="Logo">
+    </div>
+    
+    <button class="register-button">Register</button>
+    <div class="register-page">
+	  <img src="./Assets/Logo.png" alt="Logo" style="height: 70px;">
+      <input type="text" placeholder="Name" id="name">
+      <input type="text" placeholder="Phone Number" id="phone">
+      <input type="email" placeholder="Email" id="email">
+      <button id="submit">Submit</button>
+    </div>
+  </body>
+</html>
